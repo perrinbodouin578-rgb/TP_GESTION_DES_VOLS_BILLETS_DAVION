@@ -55,4 +55,4 @@ Agence -- "0..*" Place
 Agence -- "0..*" Vol
 Vol "1" -- "1..*" Place
 Vol "1" -- "0..*" Reservation
-@endumlpu
+@enduml

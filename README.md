@@ -27,3 +27,5 @@ Un vol reçoit plusieurs réservations, et chaque réservation concerne un seul 
 Un passager peut avoir une réservation, et une réservation concerne un passager.
 Un passager peut occuper plusieurs places, et une place peut être associée à plusieurs passagers.
 L'agence gère les passagers, les vols, les places et les réservations.
+
+Pour l’incrémentation en C++, j’ai fait le choix de prendre L’agence Air Benin et l'exemple de 2 passagers nommés Koffi et Marie

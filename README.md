@@ -23,6 +23,7 @@
 - id
 - type de Reservation 
 - placeReserve
+- dateHeureExpirationReservation
 - annule
 - nonAnnule
 - Classes Agence

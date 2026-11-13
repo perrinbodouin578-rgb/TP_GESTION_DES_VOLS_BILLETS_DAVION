@@ -1,0 +1,58 @@
+@startuml gestion
+title Gestion des vols
+
+class Passagers {
+      -numeroIdentification : int
+        -nom : string
+          -prenom : string
+            -dateExpirationPasseport : string
+              +afficherInformation() : void
+}
+
+class Vol {
+      -numeroVol : string
+        -villeDepart : string
+          -villeArrivee : string
+            -dateHeureDepart : string
+              -dateHeureArrivee : string
+                -nombrePlaces : int
+                  +afficherInformations() : void
+                    +placesDisponibles() : int
+                      +annuler() : void
+}
+
+class Place {
+      -numero : int
+        +occupe() : void
+          +nonOccupe() : void
+}
+
+class Reservation {
+      -id : int
+        -placeReserve : int
+          -dateHeureExpirationReservation : string
+            -classe : string
+              +annule() : void
+                +valide() : void
+}
+
+class Agence {
+      -nomAgence : string
+        -passagers : vector<Passagers>
+          -reservation : vector<Reservation>
+            -place : vector<Place>
+              -vols : vector<Vol>
+                +ajouterPassagers() : void
+                  +annulerReservation() : void
+                    +rembourserReservation() : void
+}
+
+Passagers "0..1" -- "0..1" Reservation
+Passagers "0..*" -- "0..*" Place
+Passagers "0..*" -- Agence
+Agence -- "0..*" Reservation
+Agence -- "0..*" Place
+Agence -- "0..*" Vol
+Vol "1" -- "1..*" Place
+Vol "1" -- "0..*" Reservation
+@endumlpu
